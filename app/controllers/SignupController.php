@@ -8,4 +8,9 @@ class SignupController extends Controller
     {
 
     }
+
+    public function registerAction()
+    {
+
+    }
 }
