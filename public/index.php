@@ -38,7 +38,7 @@ $di->set(
 );
 
 
-// Setup a base URI so that all generated URIs include the "tutorial" folder
+// Setup a base URI so that all generated URIs include the "phalcon-tutorial" folder
 $di->set(
     "url",
     function () {
@@ -65,3 +65,20 @@ try {
     echo "Exception: ", $e->getMessage();
 
 }
+
+
+// Setup database
+
+$di->set(
+    "db",
+    function () {
+        return new DbAdapter(
+            [
+                "host"      => "localhost",
+                "username"  => "root",
+                "password"  => "secret",
+                "dbname"    => "test_db",
+            ]
+        );
+    }
+);
